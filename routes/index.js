@@ -36,14 +36,13 @@ router.get('/clock', function (req, res, next) {
     let sign2 = HMAC.HmacSHA1(str, appSecrt);
     let ts = new Date().getTime();
     let camId = '10075';
-    // if (Math.abs(ts - parseInt(timeStamp)) > 1000 * 60) {
-    //   console.log('111');
-    //   res.json({
-    //     result: -4,
-    //     msg: '当前链接已失效'
-    //   })
-    //   return;
-    // }
+    if (Math.abs(ts - parseInt(timeStamp)) > 1000 * 60) { //链接一分钟内有效
+      res.json({
+        result: -4,
+        msg: '当前链接已失效'
+      })
+      return;
+    }
     if (sign == sign2) {
       request.get({
         url: 'https://fim-s.21cn.com:84/api/checkNumber?number=' + number + '&ts=' + ts + '&camId=' + camId
