@@ -5,12 +5,13 @@
 请求方式： GET
 请求参数：
 
-|标识|	类型|	字段含义|	备注|
-|----|----|----|----|
-|appId|	String|	appId	| |
-|number|	String|	手机号||
-|timeStamp|	String|	时间戳|	|
-|sign|	String|	签名||
+| 标识      | 类型   | 字段含义 | 备注 |
+| --------- | ------ | -------- | ---- |
+| appId     | String | appId    |      |
+| number    | String | 手机号   |      |
+| timeStamp | String | 时间戳   |      |
+| sign      | String | 签名     |      |
+
 响应参数：
 
 | 标识   | 类型   | 字段含义 | 备注                                                         |
